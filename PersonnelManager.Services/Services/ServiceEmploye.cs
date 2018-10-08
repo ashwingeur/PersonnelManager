@@ -30,10 +30,16 @@ namespace PersonnelManager.Business.Services
         {
             return this.dataEmploye.GetCadre(idCadre);
         }
+
         public void EnregistrerCadre(Cadre cadre)
         {
+            if (cadre.SalaireMensuel <= 0)
+            {
+                throw new BusinessException("Taux horaire invalide");
+            }
             this.dataEmploye.EnregistrerCadre(cadre);
         }
+
 
         public void EnregistrerOuvrier(Ouvrier ouvrier)
         {

@@ -16,6 +16,7 @@ namespace PersonnelManager.Business.Services
             this.dataEmploye = dataEmploye;
         }
 
+
         public Ouvrier GetOuvrier(string nom)
         {
             return this.dataEmploye.GetListeOuvriers().FirstOrDefault(x => x.Nom == nom);
